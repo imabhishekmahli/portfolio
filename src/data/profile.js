@@ -25,7 +25,7 @@ const profile = {
 
   email: "https://abhi8h3k@gmail.com",
 
-  location: "India",
+  location: "Bengaluru, India",
 
   education: ["M.Tech CSE • IIT Tirupati", "B.Tech CSE • IIT Dhanbad"],
 };
