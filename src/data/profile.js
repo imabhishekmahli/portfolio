@@ -1,20 +1,31 @@
 const profile = {
-  name: "Abhishek Kumar Mahli",
+  name: "Abhishek Mahli",
+
+  title: "Generative AI Engineer",
+
+  subtitle:
+    "Building intelligent AI systems using LLMs, Diffusion Models, GANs, and Full-Stack Development.",
 
   greeting: "👋 Hello, I'm",
 
-  roles: ["AI Engineer", "Machine Learning Engineer", "Full Stack Developer"],
+  location: "India",
 
-  description:
-    "Passionate about Artificial Intelligence, Machine Learning, Deep Learning, Computer Vision, and building scalable software that solves real-world problems.",
+  education: ["M.Tech CSE • IIT Tirupati", "B.Tech CSE • IIT Dhanbad"],
 
-  email: "your-email@gmail.com",
+  roles: [
+    "Generative AI Engineer",
+    "Machine Learning Engineer",
+    "AI Researcher",
+    "Full Stack Developer",
+  ],
+
+  email: "YOUR_EMAIL",
 
   github: "https://github.com/imabhishekmahli",
 
-  linkedin: "https://linkedin.com/in/your-linkedin",
+  linkedin: "YOUR_LINKEDIN_URL",
 
-  resume: "/resume.pdf",
+  resume: "/resume/Abhishek_Mahli_Resume.pdf",
 };
 
 export default profile;

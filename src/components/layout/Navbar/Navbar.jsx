@@ -1,4 +1,4 @@
-import Container from "../UI/Container";
+import Container from "../../ui/Container";
 
 function Navbar() {
   const navItems = ["About", "Skills", "Projects", "Thesis", "Contact"];

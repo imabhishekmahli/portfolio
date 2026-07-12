@@ -11,7 +11,12 @@ function Button({ children, variant = "primary", href, onClick }) {
 
   if (href) {
     return (
-      <a href={href} className={`${base} ${variants[variant]}`}>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${base} ${variants[variant]}`}
+      >
         {children}
       </a>
     );
