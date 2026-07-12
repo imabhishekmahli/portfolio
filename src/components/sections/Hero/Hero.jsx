@@ -9,6 +9,8 @@ import Aurora from "./Aurora";
 import Button from "../../ui/Button";
 import Container from "../../ui/Container";
 
+import { TypeAnimation } from "react-type-animation";
+
 function Hero() {
   return (
     <section
@@ -26,6 +28,9 @@ function Hero() {
             transition={{ duration: 0.8 }}
           >
             <p className="text-lg font-semibold text-cyan-400">
+              <div className="mb-6 inline-flex items-center rounded-full border border-green-400/30 bg-green-400/10 px-4 py-2 text-sm text-green-400">
+                🟢 Open to AI/ML Internship Opportunities
+              </div>
               {profile.greeting}
             </p>
 
@@ -33,9 +38,25 @@ function Hero() {
               {profile.name}
             </h1>
 
-            <h2 className="mt-6 text-2xl text-slate-300">
-              {profile.roles.join(" • ")}
-            </h2>
+            <div className="mt-6 text-3xl font-semibold text-cyan-400">
+              <TypeAnimation
+                sequence={[
+                  "Generative AI Engineer",
+                  2000,
+                  "AI Researcher",
+                  2000,
+                  "Machine Learning Engineer",
+                  2000,
+                  "Multi-Agent AI Developer",
+                  2000,
+                  "Full-Stack Developer",
+                  2000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+              />
+            </div>
 
             {/* Education Badges */}
             <div className="mt-6 flex flex-wrap gap-3">

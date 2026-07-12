@@ -14,9 +14,10 @@ const profile = {
 
   roles: [
     "Generative AI Engineer",
-    "Machine Learning Engineer",
     "AI Researcher",
-    "Full Stack Developer",
+    "Machine Learning Engineer",
+    "Multi-Agent AI Developer",
+    "Full-Stack Developer",
   ],
 
   github: "https://github.com/imabhishekmahli",
