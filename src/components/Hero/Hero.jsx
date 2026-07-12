@@ -1,3 +1,4 @@
+import profile from "../../data/profile";
 import Aurora from "./Aurora";
 import { motion } from "framer-motion";
 import Button from "../UI/Button";
@@ -23,7 +24,7 @@ function Hero() {
             transition={{ delay: 0.2 }}
             className="text-cyan-400 text-lg font-semibold mb-4"
           >
-            👋 Hello, I'm
+            <p>{profile.greeting}</p>
           </motion.p>
 
           <motion.h1
@@ -32,9 +33,7 @@ function Hero() {
             transition={{ delay: 0.4 }}
             className="text-6xl md:text-8xl font-black leading-tight"
           >
-            Abhishek
-            <br />
-            Mahli
+            {profile.name}
           </motion.h1>
 
           <motion.h2
@@ -43,7 +42,7 @@ function Hero() {
             transition={{ delay: 0.6 }}
             className="mt-6 text-2xl md:text-3xl text-slate-300"
           >
-            AI Engineer • Machine Learning Engineer • Developer
+            {profile.roles.join(" • ")}
           </motion.h2>
 
           <motion.p
@@ -52,9 +51,7 @@ function Hero() {
             transition={{ delay: 0.8 }}
             className="mt-8 text-lg text-slate-400 leading-8 max-w-2xl"
           >
-            Passionate about Artificial Intelligence, Deep Learning, Computer
-            Vision, and building scalable software that solves real-world
-            problems.
+            <p>{profile.description}</p>
           </motion.p>
 
           <motion.div
