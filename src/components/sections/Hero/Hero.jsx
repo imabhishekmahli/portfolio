@@ -80,7 +80,7 @@ function Hero() {
                 href={profile.github}
                 target="_blank"
                 rel="noreferrer"
-                className="transition duration-300 hover:scale-110 hover:text-cyan-400"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-white transition-all duration-300 hover:scale-110 hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-400"
               >
                 <FaGithub />
               </a>
@@ -89,14 +89,14 @@ function Hero() {
                 href={profile.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="transition duration-300 hover:scale-110 hover:text-cyan-400"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-white transition-all duration-300 hover:scale-110 hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-400"
               >
                 <FaLinkedin />
               </a>
 
               <a
                 href={`mailto:${profile.email}`}
-                className="transition duration-300 hover:scale-110 hover:text-cyan-400"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-white transition-all duration-300 hover:scale-110 hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-400"
               >
                 <FaEnvelope />
               </a>
@@ -113,6 +113,7 @@ function Hero() {
           </motion.div>
 
           {/* ================= Right ================= */}
+          {/* Right Side */}
           <motion.div
             initial={{ opacity: 0, x: 80 }}
             animate={{
@@ -121,19 +122,30 @@ function Hero() {
               y: [0, -12, 0],
             }}
             transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "easeInOut",
+              opacity: { duration: 0.8 },
+              x: { duration: 0.8 },
+              y: {
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
             }}
             className="flex justify-center"
           >
-            <div className="h-96 w-96 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 p-1 shadow-2xl shadow-cyan-500/30">
-              <div className="flex h-full w-full items-center justify-center rounded-full bg-slate-950">
-                <img
-                  src={profileImage}
-                  alt={profile.name}
-                  className="h-full w-full rounded-full object-cover"
-                />
+            <div className="relative">
+              {/* Glow */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 blur-3xl opacity-40 animate-pulse"></div>
+
+              {/* Gradient Ring */}
+              <div className="relative h-80 w-80 lg:h-[28rem] lg:w-[28rem] rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 p-1">
+                {/* Inner Circle */}
+                <div className="h-full w-full rounded-full bg-slate-950 overflow-hidden">
+                  <img
+                    src={profileImage}
+                    alt={profile.name}
+                    className="h-full w-full object-cover rounded-full"
+                  />
+                </div>
               </div>
             </div>
           </motion.div>
