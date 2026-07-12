@@ -19,13 +19,15 @@ const profile = {
     "Full Stack Developer",
   ],
 
-  email: "YOUR_EMAIL",
-
   github: "https://github.com/imabhishekmahli",
 
-  linkedin: "YOUR_LINKEDIN_URL",
+  linkedin: "https://www.linkedin.com/in/iamabhishekkumar2022/",
 
-  resume: "/resume/Abhishek_Mahli_Resume.pdf",
+  email: "https://abhi8h3k@gmail.com",
+
+  location: "India",
+
+  education: ["M.Tech CSE • IIT Tirupati", "B.Tech CSE • IIT Dhanbad"],
 };
 
 export default profile;
