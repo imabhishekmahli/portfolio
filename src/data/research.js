@@ -1,5 +1,6 @@
 const research = [
   {
+    id: 1,
     featured: true,
 
     title:
@@ -9,6 +10,9 @@ const research = [
 
     degree: "M.Tech Thesis",
 
+    description:
+      "Developed a hybrid Diffusion-GAN framework for realistic financial time-series generation with forecasting refinement. The framework combines diffusion models with GANs to improve sample quality and forecasting performance.",
+
     technologies: [
       "Diffusion Models",
       "GAN",
@@ -17,11 +21,12 @@ const research = [
       "Financial AI",
     ],
 
-    description:
-      "Developed a hybrid Diffusion-GAN framework for realistic financial time-series generation with forecasting refinement.",
+    thesis: "",
+    github: "",
   },
 
   {
+    id: 2,
     featured: false,
 
     title:
@@ -31,10 +36,13 @@ const research = [
 
     degree: "B.Tech Thesis",
 
+    description:
+      "Comparative study of TimeGAN and Diffusion models for generating synthetic financial time-series data.",
+
     technologies: ["TimeGAN", "Diffusion", "PyTorch", "TensorFlow"],
 
-    description:
-      "Compared TimeGAN and Diffusion models for generating high-quality synthetic financial time-series data.",
+    thesis: "",
+    github: "",
   },
 ];
 
