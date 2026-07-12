@@ -3,6 +3,8 @@ import Hero from "../components/sections/Hero/Hero";
 import Research from "../components/sections/Research/Research";
 import Projects from "../components/sections/Projects/Projects";
 import Skills from "../components/sections/Skills/Skills";
+import Education from "../components/sections/Education/Education";
+import Experience from "../components/sections/Experience/Experience";
 
 function Home() {
   return (
@@ -12,6 +14,8 @@ function Home() {
       <Research />
       <Projects />
       <Skills />
+      <Education />
+      <Experience />
     </>
   );
 }
