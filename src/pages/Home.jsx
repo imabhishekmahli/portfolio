@@ -6,6 +6,7 @@ import Skills from "../components/sections/Skills/Skills";
 import Education from "../components/sections/Education/Education";
 import Experience from "../components/sections/Experience/Experience";
 import Contact from "../components/sections/Contact/Contact";
+import Footer from "../components/layout/Footer/Footer";
 
 function Home() {
   return (
@@ -18,6 +19,7 @@ function Home() {
       <Education />
       <Experience />
       <Contact />
+      <Footer />
     </>
   );
 }
