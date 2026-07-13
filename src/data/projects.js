@@ -8,7 +8,7 @@ const projects = [
     subtitle: "Multi-Agent AI Research System",
 
     description:
-      "Built an autonomous AI research platform where multiple LLM agents generate hypotheses, write code, execute experiments inside isolated virtual environments, analyze results, and iteratively improve experiments without human intervention.",
+      "Developed a multi-agent AI research platform where autonomous LLM agents generate hypotheses, write code, execute experiments, analyze results, and iteratively improve research workflows.",
 
     technologies: [
       "Python",

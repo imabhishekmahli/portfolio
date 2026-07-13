@@ -23,6 +23,7 @@ function Hero() {
         <div className="grid items-center gap-20 lg:grid-cols-[1.2fr_0.8fr]">
           {/* Left */}
           <motion.div
+            className="mx-auto max-w-xl"
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
