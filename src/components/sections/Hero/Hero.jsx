@@ -15,30 +15,39 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative flex min-h-screen items-center overflow-hidden"
     >
       <Aurora />
 
       <Container>
-        <div className="grid items-center gap-16 lg:grid-cols-2">
-          {/* ================= Left ================= */}
+        <div className="grid items-center gap-20 lg:grid-cols-[1.2fr_0.8fr]">
+          {/* Left */}
           <motion.div
-            initial={{ opacity: 0, x: -80 }}
+            initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            className="relative"
           >
+            {/* Background Glow */}
+            <div className="absolute -left-20 top-20 -z-10 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl"></div>
+
+            {/* Open to Work */}
+            <div className="mb-5 inline-flex items-center rounded-full border border-green-400/30 bg-green-400/10 px-5 py-2 text-sm font-medium text-green-400">
+              🟢 Open to AI / ML Internship Opportunities
+            </div>
+
+            {/* Greeting */}
             <p className="text-lg font-semibold text-cyan-400">
-              <div className="mb-6 inline-flex items-center rounded-full border border-green-400/30 bg-green-400/10 px-4 py-2 text-sm text-green-400">
-                🟢 Open to AI/ML Internship Opportunities
-              </div>
               {profile.greeting}
             </p>
 
-            <h1 className="mt-4 text-6xl font-black leading-none text-white lg:text-8xl">
+            {/* Name */}
+            <h1 className="mt-5 text-6xl font-black leading-tight tracking-tight text-white lg:text-8xl">
               {profile.name}
             </h1>
 
-            <div className="mt-6 text-3xl font-semibold text-cyan-400">
+            {/* Roles */}
+            <div className="mt-6 text-3xl font-bold text-cyan-400">
               <TypeAnimation
                 sequence={[
                   "Generative AI Engineer",
@@ -58,53 +67,54 @@ function Hero() {
               />
             </div>
 
-            {/* Education Badges */}
-            <div className="mt-6 flex flex-wrap gap-3">
+            {/* IIT Badges */}
+            <div className="mt-8 flex flex-wrap gap-3">
               {profile.education.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-cyan-400/50 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-300 backdrop-blur-md"
+                  className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-5 py-2 text-sm font-medium text-cyan-300 transition duration-300 hover:border-cyan-400 hover:bg-cyan-400 hover:text-slate-950"
                 >
                   🎓 {item}
                 </span>
               ))}
             </div>
 
-            <p className="mt-8 max-w-xl leading-8 text-slate-400">
+            {/* Description */}
+            <p className="mt-8 max-w-2xl text-lg leading-9 text-slate-300">
               {profile.description}
             </p>
 
-            {/* Social Icons */}
-            <div className="mt-8 flex items-center gap-6 text-3xl">
-              <a
-                href={profile.github}
-                target="_blank"
-                rel="noreferrer"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-white transition-all duration-300 hover:scale-110 hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-400"
-              >
-                <FaGithub />
-              </a>
-
-              <a
-                href={profile.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-white transition-all duration-300 hover:scale-110 hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-400"
-              >
-                <FaLinkedin />
-              </a>
-
-              <a
-                href={`mailto:${profile.email}`}
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-white transition-all duration-300 hover:scale-110 hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-cyan-400"
-              >
-                <FaEnvelope />
-              </a>
+            {/* Socials */}
+            <div className="mt-10 flex items-center gap-5">
+              {[
+                {
+                  icon: <FaGithub size={22} />,
+                  link: profile.github,
+                },
+                {
+                  icon: <FaLinkedin size={22} />,
+                  link: profile.linkedin,
+                },
+                {
+                  icon: <FaEnvelope size={22} />,
+                  link: `mailto:${profile.email}`,
+                },
+              ].map((item, index) => (
+                <a
+                  key={index}
+                  href={item.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:bg-cyan-400 hover:text-slate-950"
+                >
+                  {item.icon}
+                </a>
+              ))}
             </div>
 
             {/* Buttons */}
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Button>View Projects</Button>
+            <div className="mt-12 flex flex-wrap gap-5">
+              <Button href="#projects">View Projects</Button>
 
               <Button variant="secondary" href={profile.resume}>
                 Download Resume
@@ -112,14 +122,13 @@ function Hero() {
             </div>
           </motion.div>
 
-          {/* ================= Right ================= */}
-          {/* Right Side */}
+          {/* Right */}
           <motion.div
-            initial={{ opacity: 0, x: 80 }}
+            initial={{ opacity: 0, x: 60 }}
             animate={{
               opacity: 1,
               x: 0,
-              y: [0, -12, 0],
+              y: [0, -10, 0],
             }}
             transition={{
               opacity: { duration: 0.8 },
@@ -134,19 +143,27 @@ function Hero() {
           >
             <div className="relative">
               {/* Glow */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 blur-3xl opacity-40 animate-pulse"></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 opacity-40 blur-3xl"></div>
 
-              {/* Gradient Ring */}
-              <div className="relative h-80 w-80 lg:h-[28rem] lg:w-[28rem] rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 p-1">
-                {/* Inner Circle */}
-                <div className="h-full w-full rounded-full bg-slate-950 overflow-hidden">
+              {/* Image Ring */}
+              <motion.div
+                whileHover={{
+                  rotate: 3,
+                  scale: 1.03,
+                }}
+                transition={{
+                  duration: 0.3,
+                }}
+                className="relative h-80 w-80 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 p-1 lg:h-[25rem] lg:w-[25rem]"
+              >
+                <div className="h-full w-full overflow-hidden rounded-full bg-slate-950">
                   <img
                     src={profileImage}
                     alt={profile.name}
-                    className="h-full w-full object-cover rounded-full"
+                    className="h-full w-full rounded-full object-cover"
                   />
                 </div>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
