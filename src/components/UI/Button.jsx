@@ -1,32 +1,25 @@
 function Button({ children, variant = "primary", href, onClick }) {
   const base =
-    "inline-flex items-center justify-center rounded-2xl px-8 py-4 font-semibold shadow-lg transition-all duration-300 hover:scale-105";
+    "inline-flex items-center justify-center rounded-2xl px-8 py-4 font-semibold transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] active:scale-95 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 shadow-lg";
 
   const variants = {
     primary:
-      "bg-cyan-400 text-slate-950 hover:bg-cyan-300 hover:shadow-xl hover:shadow-cyan-500/30",
+      "bg-cyan-400 text-slate-950 hover:bg-cyan-300 hover:shadow-cyan-500/30 hover:shadow-2xl",
 
     secondary:
-      "border border-cyan-400 bg-white/5 text-cyan-400 backdrop-blur-sm hover:bg-cyan-400 hover:text-slate-950",
+      "border border-cyan-400 bg-white/5 text-cyan-400 backdrop-blur-md hover:bg-cyan-400 hover:text-slate-950 hover:shadow-cyan-500/20 hover:shadow-xl",
   };
 
-  // Link Button
   if (href) {
-    // Internal page links (#projects, #contact, etc.)
-    if (href.startsWith("#")) {
-      return (
-        <a href={href} className={`${base} ${variants[variant]}`}>
-          {children}
-        </a>
-      );
-    }
+    const isInternal = href.startsWith("#");
 
-    // External links
     return (
       <a
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        {...(!isInternal && {
+          target: "_blank",
+          rel: "noopener noreferrer",
+        })}
         className={`${base} ${variants[variant]}`}
       >
         {children}
@@ -34,7 +27,6 @@ function Button({ children, variant = "primary", href, onClick }) {
     );
   }
 
-  // Normal button
   return (
     <button onClick={onClick} className={`${base} ${variants[variant]}`}>
       {children}

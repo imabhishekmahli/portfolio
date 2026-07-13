@@ -1,13 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 
 import Container from "../../ui/Container";
 import Button from "../../ui/Button";
-
 import profile from "../../../data/profile";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { label: "Research", href: "#research" },
@@ -19,14 +29,18 @@ function Navbar() {
   ];
 
   const navLinkClass =
-    "relative text-slate-300 transition duration-300 hover:text-cyan-400 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-cyan-400 after:transition-all after:duration-300 hover:after:w-full";
+    "relative text-slate-300 font-medium transition-all duration-300 hover:text-cyan-400 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-cyan-400 after:transition-all after:duration-300 hover:after:w-full";
 
   return (
     <header className="fixed top-0 left-0 z-50 w-full">
       <Container>
-        <nav className="fixed top-5 left-1/2 z-50 flex h-20 w-[95%] max-w-7xl -translate-x-1/2 items-center justify-between rounded-2xl border border-white/10 bg-slate-900/60 px-8 backdrop-blur-xl shadow-2xl">
+        <nav
+          className={`fixed left-1/2 z-50 flex w-[95%] max-w-7xl -translate-x-1/2 items-center justify-between rounded-2xl border border-white/10 bg-slate-900/70 px-8 backdrop-blur-xl shadow-2xl transition-all duration-300 ${
+            scrolled ? "top-3 h-16" : "top-5 h-20"
+          }`}
+        >
           {/* Logo */}
-          <a href="#home">
+          <a href="#home" className="transition duration-300 hover:scale-105">
             <h1 className="text-3xl font-black tracking-tight">
               <span className="text-white">Abhishek</span>
               <span className="text-cyan-400">.</span>
@@ -37,7 +51,7 @@ function Navbar() {
           </a>
 
           {/* Desktop Navigation */}
-          <ul className="hidden lg:flex items-center gap-8">
+          <ul className="hidden items-center gap-8 lg:flex">
             {navItems.map((item) => (
               <li key={item.label}>
                 <a href={item.href} className={navLinkClass}>
@@ -54,34 +68,38 @@ function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-3xl text-white"
+            className="text-3xl text-white transition hover:text-cyan-400 lg:hidden"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <HiOutlineX /> : <HiOutlineMenu />}
           </button>
 
           {/* Mobile Menu */}
-          {isOpen && (
-            <div className="absolute left-0 top-24 w-full rounded-2xl border border-white/10 bg-slate-900/95 p-6 backdrop-blur-xl lg:hidden">
-              <ul className="flex flex-col gap-5">
-                {navItems.map((item) => (
-                  <li key={item.label}>
-                    <a
-                      href={item.href}
-                      className="text-slate-300 hover:text-cyan-400"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+          <div
+            className={`absolute left-0 top-[110%] w-full overflow-hidden rounded-2xl border border-white/10 bg-slate-900/95 backdrop-blur-xl transition-all duration-300 lg:hidden ${
+              isOpen
+                ? "max-h-96 p-6 opacity-100"
+                : "max-h-0 p-0 opacity-0 border-0"
+            }`}
+          >
+            <ul className="flex flex-col gap-5">
+              {navItems.map((item) => (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    className="text-slate-300 transition hover:text-cyan-400"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
 
-              <div className="mt-6">
-                <Button href={profile.resume}>Resume</Button>
-              </div>
+            <div className="mt-6">
+              <Button href={profile.resume}>Resume</Button>
             </div>
-          )}
+          </div>
         </nav>
       </Container>
     </header>

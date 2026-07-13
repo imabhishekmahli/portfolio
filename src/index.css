@@ -1,21 +1,26 @@
-html {
-  scroll-behavior: smooth;
-}
 @import "tailwindcss";
 
+/* ---------- Theme ---------- */
+
 :root {
-  --background: #030712;
-  --surface: #111827;
+  --background: #020617;
+  --surface: #0f172a;
   --primary: #22d3ee;
   --secondary: #7c3aed;
   --text: #ffffff;
 }
 
-* {
+/* ---------- Reset ---------- */
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* ---------- Global ---------- */
 
 html {
   scroll-behavior: smooth;
@@ -24,14 +29,11 @@ html {
 body {
   background: var(--background);
   color: var(--text);
-  font-family: Inter, sans-serif;
-  overflow-x: hidden;
-}
-
-body {
-  background: #020617;
-  color: white;
   font-family: Inter, system-ui, sans-serif;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 section {
@@ -43,4 +45,49 @@ h1,
 h2,
 h3 {
   letter-spacing: -0.03em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- Text Selection ---------- */
+
+::selection {
+  background: #22d3ee;
+  color: #020617;
+}
+
+/* ---------- Scrollbar ---------- */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#22d3ee, #3b82f6);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#67e8f9, #60a5fa);
+}
+
+/* ---------- Images ---------- */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ---------- Focus ---------- */
+
+:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 3px;
 }
