@@ -1,10 +1,12 @@
 import education from "../../../data/education";
 import Container from "../../ui/Container";
+import FadeInSection from "../../ui/FadeInSection";
 
 function Education() {
   return (
     <section id="education" className="bg-slate-900 py-28">
       <Container>
+        <FadeInSection>
         <h2 className="text-center text-5xl font-bold text-white">Education</h2>
 
         <p className="mt-4 text-center text-slate-400">
@@ -29,6 +31,7 @@ function Education() {
             </div>
           ))}
         </div>
+        </FadeInSection>
       </Container>
     </section>
   );

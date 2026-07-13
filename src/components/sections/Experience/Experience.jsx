@@ -1,10 +1,12 @@
 import experience from "../../../data/experience";
 import Container from "../../ui/Container";
+import FadeInSection from "../../ui/FadeInSection";
 
 function Experience() {
   return (
     <section id="experience" className="bg-slate-950 py-28">
       <Container>
+        <FadeInSection>
         <h2 className="text-center text-5xl font-bold text-white">
           Experience
         </h2>
@@ -51,6 +53,7 @@ function Experience() {
             </div>
           ))}
         </div>
+        </FadeInSection>
       </Container>
     </section>
   );

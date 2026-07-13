@@ -3,6 +3,7 @@ import { FaEnvelope, FaGithub, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa
 import profile from "../../../data/profile";
 import Container from "../../ui/Container";
 import Button from "../../ui/Button";
+import FadeInSection from "../../ui/FadeInSection";
 
 function Contact() {
   return (
@@ -11,6 +12,7 @@ function Contact() {
       className="bg-slate-900 py-28"
     >
       <Container>
+        <FadeInSection>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-5xl font-bold text-white">
             Let's Build Something Amazing 🚀
@@ -69,6 +71,7 @@ function Contact() {
             </Button>
           </div>
         </div>
+        </FadeInSection>
       </Container>
     </section>
   );
