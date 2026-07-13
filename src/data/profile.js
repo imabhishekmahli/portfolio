@@ -1,16 +1,15 @@
 const profile = {
   name: "Abhishek Mahli",
 
+  greeting: "Hello, I'm",
+
   title: "Generative AI Engineer",
 
   subtitle:
-    "Building intelligent AI systems using LLMs, Diffusion Models, GANs, and Full-Stack Development.",
+    "Building intelligent AI systems using LLMs, Diffusion Models, GANs, Multi-Agent Systems and Full-Stack Development.",
 
-  greeting: "👋 Hello, I'm",
-
-  location: "India",
-
-  education: ["M.Tech CSE • IIT Tirupati", "B.Tech CSE • IIT Dhanbad"],
+  description:
+    "M.Tech Computer Science student at IIT Tirupati with a strong interest in Generative AI, Large Language Models, Machine Learning and Full-Stack Engineering. Passionate about building intelligent AI systems that solve real-world problems through research and software engineering.",
 
   roles: [
     "Generative AI Engineer",
@@ -20,15 +19,17 @@ const profile = {
     "Full-Stack Developer",
   ],
 
+  education: ["M.Tech CSE • IIT Tirupati", "B.Tech CSE • IIT Dhanbad"],
+
+  location: "Bengaluru, India",
+
+  email: "abhi8h3k@gmail.com",
+
   github: "https://github.com/imabhishekmahli",
 
   linkedin: "https://www.linkedin.com/in/iamabhishekkumar2022/",
 
-  email: "https://abhi8h3k@gmail.com",
-
-  location: "Bengaluru, India",
-
-  education: ["M.Tech CSE • IIT Tirupati", "B.Tech CSE • IIT Dhanbad"],
+  resume: "../../assets/resume/Abhishek_Mahli_Resume.pdf",
 };
 
 export default profile;

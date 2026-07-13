@@ -3,62 +3,72 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaArrowUp } from "react-icons/fa";
 import profile from "../../../data/profile";
 
 function Footer() {
+  const socials = [
+    {
+      icon: <FaGithub />,
+      href: profile.github,
+    },
+    {
+      icon: <FaLinkedin />,
+      href: profile.linkedin,
+    },
+    {
+      icon: <FaEnvelope />,
+      href: `mailto:${profile.email}`,
+    },
+  ];
+
   return (
-    <footer className="border-t border-white/10 bg-slate-950 py-12">
+    <footer className="border-t border-white/10 bg-slate-950 py-14">
       <div className="mx-auto flex max-w-7xl flex-col items-center px-6">
+        {/* Logo */}
+        <a href="#home" className="transition duration-300 hover:scale-105">
+          <h2 className="text-3xl font-black tracking-tight">
+            <span className="text-white">Abhishek</span>
+            <span className="text-cyan-400">.</span>
+            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              Mahli
+            </span>
+          </h2>
+        </a>
 
-        <h2 className="text-3xl font-black">
-          <span className="text-white">Abhishek</span>
-          <span className="text-cyan-400">.</span>
-          <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            Mahli
-          </span>
-        </h2>
-
-        <p className="mt-4 max-w-xl text-center text-slate-400">
-          AI Engineer • Generative AI • Machine Learning • Full Stack Developer
+        {/* Subtitle */}
+        <p className="mt-5 max-w-2xl text-center leading-8 text-slate-400">
+          AI Engineer • Generative AI • Machine Learning • Multi-Agent Systems •
+          Full-Stack Development
         </p>
 
-        <div className="mt-8 flex gap-6 text-3xl">
-
-          <a
-            href={profile.github}
-            target="_blank"
-            rel="noreferrer"
-            className="transition hover:text-cyan-400"
-          >
-            <FaGithub />
-          </a>
-
-          <a
-            href={profile.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            className="transition hover:text-cyan-400"
-          >
-            <FaLinkedin />
-          </a>
-
-          <a
-            href={`mailto:${profile.email}`}
-            className="transition hover:text-cyan-400"
-          >
-            <FaEnvelope />
-          </a>
-
+        {/* Socials */}
+        <div className="mt-10 flex gap-5">
+          {socials.map((item, index) => (
+            <a
+              key={index}
+              href={item.href}
+              target={item.href.startsWith("mailto:") ? undefined : "_blank"}
+              rel="noreferrer"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-xl text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:bg-cyan-400 hover:text-slate-950"
+            >
+              {item.icon}
+            </a>
+          ))}
         </div>
 
-        <p className="mt-10 text-sm text-slate-500">
-          © {new Date().getFullYear()} Abhishek Mahli. All Rights Reserved.
+        {/* Divider */}
+        <div className="my-10 h-px w-full max-w-4xl bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
+
+        {/* Copyright */}
+        <p className="text-center text-sm text-slate-500">
+          © {new Date().getFullYear()} Abhishek Mahli. Built with React, Vite &
+          Tailwind CSS.
         </p>
 
+        {/* Back to Top */}
         <a
           href="#home"
-          className="mt-8 rounded-full border border-cyan-400 p-4 transition hover:bg-cyan-400 hover:text-slate-950"
+          className="mt-8 flex h-12 w-12 items-center justify-center rounded-full border border-cyan-400 bg-cyan-400/10 text-cyan-400 transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-400 hover:text-slate-950"
         >
           <FaArrowUp />
         </a>
-
       </div>
     </footer>
   );
