@@ -27,3 +27,20 @@ body {
   font-family: Inter, sans-serif;
   overflow-x: hidden;
 }
+
+body {
+  background: #020617;
+  color: white;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+section {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.03em;
+}
