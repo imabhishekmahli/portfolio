@@ -1,4 +1,4 @@
-function Button({ children, variant = "primary", href, onClick }) {
+function Button({ children, variant = "primary", href, onClick, download = false }) {
   const base =
     "inline-flex items-center justify-center rounded-2xl px-8 py-4 font-semibold transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] active:scale-95 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 shadow-lg";
 
@@ -11,15 +11,16 @@ function Button({ children, variant = "primary", href, onClick }) {
   };
 
   if (href) {
-    const isInternal = href.startsWith("#");
+    const opensNewTab = /^https?:\/\//.test(href);
 
     return (
       <a
         href={href}
-        {...(!isInternal && {
+        {...(opensNewTab && {
           target: "_blank",
           rel: "noopener noreferrer",
         })}
+        download={download || undefined}
         className={`${base} ${variants[variant]}`}
       >
         {children}
@@ -28,7 +29,7 @@ function Button({ children, variant = "primary", href, onClick }) {
   }
 
   return (
-    <button onClick={onClick} className={`${base} ${variants[variant]}`}>
+    <button type="button" onClick={onClick} className={`${base} ${variants[variant]}`}>
       {children}
     </button>
   );

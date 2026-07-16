@@ -1,7 +1,7 @@
 import projects from "../../../data/projects";
-import Container from "../../ui/Container";
-import FadeInSection from "../../ui/FadeInSection";
-import SectionHeader from "../../ui/SectionHeader";
+import Container from "../../UI/Container";
+import FadeInSection from "../../UI/FadeInSection";
+import SectionHeader from "../../UI/SectionHeader";
 
 function Projects() {
   return (

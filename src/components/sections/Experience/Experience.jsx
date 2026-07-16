@@ -1,6 +1,6 @@
 import experience from "../../../data/experience";
-import Container from "../../ui/Container";
-import FadeInSection from "../../ui/FadeInSection";
+import Container from "../../UI/Container";
+import FadeInSection from "../../UI/FadeInSection";
 
 function Experience() {
   return (

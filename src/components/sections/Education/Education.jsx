@@ -1,6 +1,6 @@
 import education from "../../../data/education";
-import Container from "../../ui/Container";
-import FadeInSection from "../../ui/FadeInSection";
+import Container from "../../UI/Container";
+import FadeInSection from "../../UI/FadeInSection";
 
 function Education() {
   return (

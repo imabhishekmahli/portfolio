@@ -6,8 +6,8 @@ import profile from "../../../data/profile";
 
 import Aurora from "./Aurora";
 
-import Button from "../../ui/Button";
-import Container from "../../ui/Container";
+import Button from "../../UI/Button";
+import Container from "../../UI/Container";
 
 import { TypeAnimation } from "react-type-animation";
 
@@ -23,11 +23,10 @@ function Hero() {
         <div className="grid items-center gap-20 lg:grid-cols-[1.2fr_0.8fr]">
           {/* Left */}
           <motion.div
-            className="mx-auto max-w-xl"
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="relative mx-auto max-w-xl"
           >
             {/* Background Glow */}
             <div className="absolute -left-20 top-20 -z-10 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl"></div>
@@ -50,18 +49,7 @@ function Hero() {
             {/* Roles */}
             <div className="mt-6 text-3xl font-bold text-cyan-400">
               <TypeAnimation
-                sequence={[
-                  "Generative AI Engineer",
-                  2000,
-                  "AI Researcher",
-                  2000,
-                  "Machine Learning Engineer",
-                  2000,
-                  "Multi-Agent AI Developer",
-                  2000,
-                  "Full-Stack Developer",
-                  2000,
-                ]}
+                sequence={profile.roles.flatMap((role) => [role, 2000])}
                 wrapper="span"
                 speed={50}
                 repeat={Infinity}
@@ -91,21 +79,27 @@ function Hero() {
                 {
                   icon: <FaGithub size={22} />,
                   link: profile.github,
+                  label: "GitHub profile",
                 },
                 {
                   icon: <FaLinkedin size={22} />,
                   link: profile.linkedin,
+                  label: "LinkedIn profile",
                 },
                 {
                   icon: <FaEnvelope size={22} />,
                   link: `mailto:${profile.email}`,
+                  label: "Send an email",
                 },
-              ].map((item, index) => (
+              ].map((item) => (
                 <a
-                  key={index}
+                  key={item.label}
                   href={item.link}
-                  target="_blank"
-                  rel="noreferrer"
+                  aria-label={item.label}
+                  {...(!item.link.startsWith("mailto:") && {
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                  })}
                   className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:bg-cyan-400 hover:text-slate-950"
                 >
                   {item.icon}
@@ -117,7 +111,7 @@ function Hero() {
             <div className="mt-12 flex flex-wrap gap-5">
               <Button href="#projects">View Projects</Button>
 
-              <Button variant="secondary" href={profile.resume}>
+              <Button variant="secondary" href={profile.resume} download>
                 Download Resume
               </Button>
             </div>

@@ -7,9 +7,9 @@ import {
 
 import profile from "../../../data/profile";
 
-import Container from "../../ui/Container";
-import Button from "../../ui/Button";
-import FadeInSection from "../../ui/FadeInSection";
+import Container from "../../UI/Container";
+import Button from "../../UI/Button";
+import FadeInSection from "../../UI/FadeInSection";
 
 function Contact() {
   const contacts = [
