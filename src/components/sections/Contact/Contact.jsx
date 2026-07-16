@@ -66,9 +66,9 @@ function Contact() {
             {contacts.map((item) => (
               <div
                 key={item.label}
-                className="group rounded-3xl border border-white/10 bg-slate-900/60 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/10"
+                className="group rounded-3xl border border-white/10 bg-slate-900/60 p-6 text-center backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/10"
               >
-                <div className="flex items-center gap-4">
+                <div className="flex items-center justify-center gap-4">
                   <div className="flex h-14 w-14 items-center justify-center rounded-full bg-cyan-500/10 text-2xl text-cyan-400 transition group-hover:bg-cyan-400 group-hover:text-slate-950">
                     {item.icon}
                   </div>

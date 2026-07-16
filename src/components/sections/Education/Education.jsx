@@ -28,7 +28,7 @@ function Education() {
             {education.map((item) => (
               <div
                 key={item.id}
-                className="group rounded-3xl border border-white/10 bg-slate-900/60 backdrop-blur-xl p-8 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/10"
+                className="group rounded-3xl border border-white/10 bg-slate-900/60 p-8 text-center backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/10"
               >
                 {/* Degree */}
                 <h3 className="text-3xl font-bold text-white transition duration-300 group-hover:text-cyan-400">
