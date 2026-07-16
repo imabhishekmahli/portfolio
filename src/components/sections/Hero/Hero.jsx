@@ -26,7 +26,7 @@ function Hero() {
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative mx-auto max-w-xl"
+            className="relative mx-auto max-w-xl text-center"
           >
             {/* Background Glow */}
             <div className="absolute -left-20 top-20 -z-10 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl"></div>
@@ -57,7 +57,7 @@ function Hero() {
             </div>
 
             {/* IIT Badges */}
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
               {profile.education.map((item) => (
                 <span
                   key={item}
@@ -74,7 +74,7 @@ function Hero() {
             </p>
 
             {/* Socials */}
-            <div className="mt-10 flex items-center gap-5">
+            <div className="mt-10 flex items-center justify-center gap-5">
               {[
                 {
                   icon: <FaGithub size={22} />,
@@ -108,7 +108,7 @@ function Hero() {
             </div>
 
             {/* Buttons */}
-            <div className="mt-12 flex flex-wrap gap-5">
+            <div className="mt-12 flex flex-wrap justify-center gap-5">
               <Button href="#projects">View Projects</Button>
 
               <Button variant="secondary" href={profile.resume} download>

@@ -28,9 +28,9 @@ function Experience() {
             {experience.map((job) => (
               <div
                 key={job.id}
-                className="group rounded-3xl border border-white/10 bg-slate-900/60 backdrop-blur-xl p-8 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/10"
+                className="group rounded-3xl border border-white/10 bg-slate-900/60 p-8 text-center backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/10"
               >
-                <div className="flex flex-col justify-between gap-6 md:flex-row">
+                <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
                   <div>
                     <h3 className="text-3xl font-bold text-white transition duration-300 group-hover:text-cyan-400">
                       {job.role}
@@ -41,7 +41,7 @@ function Experience() {
                     </p>
                   </div>
 
-                  <div className="text-left text-slate-400 md:text-right">
+                  <div className="text-center text-slate-400">
                     <p>{job.duration}</p>
                     <p>{job.location}</p>
                   </div>
@@ -50,7 +50,7 @@ function Experience() {
                 {/* Responsibilities */}
                 <ul className="mt-8 space-y-3 text-slate-400">
                   {job.description.map((point) => (
-                    <li key={point} className="flex items-start gap-3">
+                    <li key={point} className="flex items-start justify-center gap-3">
                       <span className="mt-1 text-cyan-400">▹</span>
                       <span>{point}</span>
                     </li>
@@ -58,7 +58,7 @@ function Experience() {
                 </ul>
 
                 {/* Technologies */}
-                <div className="mt-8 flex flex-wrap gap-3">
+                <div className="mt-8 flex flex-wrap justify-center gap-3">
                   {job.technologies.map((tech) => (
                     <span
                       key={tech}

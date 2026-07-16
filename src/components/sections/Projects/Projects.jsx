@@ -23,7 +23,7 @@ function Projects() {
                   className="group flex min-h-[200px] flex-col rounded-[32px] border border-white/10 bg-slate-900/60 p-4 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-[0_20px_50px_rgba(34,211,238,0.15)]"
                 >
                   {/* Inner Content */}
-                  <div className="flex h-full flex-col justify-between rounded-[26px] p-8 lg:p-10">
+                  <div className="flex h-full flex-col justify-between rounded-[26px] p-8 text-center lg:p-10">
                     {/* Featured Badge */}
                     {project.featured && (
                       <div className="mb-8">
@@ -44,7 +44,7 @@ function Projects() {
                     </p>
 
                     {/* Divider */}
-                    <div className="mt-6 mb-8 h-px w-24 bg-cyan-500/30"></div>
+                      <div className="mt-6 mb-8 mx-auto h-px w-24 bg-cyan-500/30"></div>
 
                     {/* Description */}
                     <p className="flex-1 leading-9 text-slate-400">
@@ -57,7 +57,7 @@ function Projects() {
                         Tech Stack
                       </h4>
 
-                      <div className="flex flex-wrap gap-3">
+                      <div className="flex flex-wrap justify-center gap-3">
                         {project.technologies.map((tech) => (
                           <span
                             key={tech}
@@ -71,7 +71,7 @@ function Projects() {
 
                     {/* Buttons */}
                     {(project.github || project.demo) && (
-                      <div className="mt-12 flex flex-wrap gap-4">
+                      <div className="mt-12 flex flex-wrap justify-center gap-4">
                         {project.github && (
                           <a
                             href={project.github}

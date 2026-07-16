@@ -31,11 +31,11 @@ function Skills() {
                 key={group.category}
                 className="group rounded-3xl border border-white/10 bg-slate-900/60 backdrop-blur-xl p-8 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/10"
               >
-                <h3 className="text-2xl font-bold text-cyan-400">
+                <h3 className="text-center text-2xl font-bold text-cyan-400">
                   {group.category}
                 </h3>
 
-                <div className="mt-8 flex flex-wrap gap-3">
+                <div className="mt-8 flex flex-wrap justify-center gap-3">
                   {group.items.map((skill) => (
                     <span
                       key={skill}
