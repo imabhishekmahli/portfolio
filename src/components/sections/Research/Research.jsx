@@ -15,11 +15,11 @@ function Research() {
           />
 
           {/* Research Cards */}
-          <div className="mx-auto flex max-w-4xl flex-col gap-24">
+          <div className="grid justify-items-center gap-24">
             {research.map((item) => (
               <div
                 key={item.id}
-                className="group w-full rounded-[32px] border border-white/10 bg-slate-900/60 p-14 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/10"
+                className="group w-full max-w-4xl rounded-[32px] border border-white/10 bg-slate-900/60 p-14 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/10"
               >
                 {/* Featured Badge */}
                 {item.featured && (
