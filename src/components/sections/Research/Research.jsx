@@ -1,12 +1,12 @@
 import research from "../../../data/research";
-import Container from "../../ui/Container";
-import FadeInSection from "../../ui/FadeInSection";
-import SectionHeader from "../../ui/SectionHeader";
+import Container from "../../UI/Container";
+import FadeInSection from "../../UI/FadeInSection";
+import SectionHeader from "../../UI/SectionHeader";
 
 function Research() {
   return (
     <section id="research" className="bg-slate-950 py-32">
-      <Container className="max-w-5xl">
+      <Container maxWidth="max-w-5xl">
         <FadeInSection>
           <SectionHeader
             label="RESEARCH"

@@ -1,6 +1,8 @@
-function Container({ children }) {
+function Container({ children, className = "", maxWidth = "max-w-6xl" }) {
   return (
-    <div className="mx-auto w-full max-w-6xl px-6 lg:px-8">{children}</div>
+    <div className={`mx-auto w-full ${maxWidth} px-6 lg:px-8 ${className}`}>
+      {children}
+    </div>
   );
 }
 

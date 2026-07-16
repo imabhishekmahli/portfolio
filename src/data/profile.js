@@ -29,7 +29,7 @@ const profile = {
 
   linkedin: "https://www.linkedin.com/in/iamabhishekkumar2022/",
 
-  resume: "../../assets/resume/Abhishek_Mahli_Resume.pdf",
+  resume: "/resume/Abhishek_Mahli_Resume.pdf",
 };
 
 export default profile;

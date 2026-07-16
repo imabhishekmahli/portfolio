@@ -1,16 +1,40 @@
-# React + Vite
+# Abhishek Mahli Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive personal portfolio for a Generative AI Engineer, built with React, Vite, Tailwind CSS, and Framer Motion.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Use Node.js 24 (see `.nvmrc`) and npm.
 
-## React Compiler
+## Run locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+nvm use
+npm ci
+npm run dev
+```
 
-## Expanding the ESLint configuration
+## Quality checks
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run lint
+npm run build
+```
+
+The GitHub Actions workflow runs these checks for pull requests and pushes to `main`.
+
+## Updating portfolio content
+
+Portfolio data is kept separate from the components:
+
+- `src/data/profile.js` — profile, contact details, and resume path
+- `src/data/projects.js` — featured projects and links
+- `src/data/research.js` — research entries and links
+- `src/data/experience.js` — experience entries
+- `src/data/education.js` and `src/data/skills.js` — qualifications and skills
+
+Place the downloadable resume at `public/resume/Abhishek_Mahli_Resume.pdf`. It is served from `/resume/Abhishek_Mahli_Resume.pdf` in development and production.
+
+## Build output
+
+`npm run build` writes the deployable static site to `dist/`.

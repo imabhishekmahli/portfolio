@@ -7,14 +7,17 @@ function Footer() {
     {
       icon: <FaGithub />,
       href: profile.github,
+      label: "GitHub profile",
     },
     {
       icon: <FaLinkedin />,
       href: profile.linkedin,
+      label: "LinkedIn profile",
     },
     {
       icon: <FaEnvelope />,
       href: `mailto:${profile.email}`,
+      label: "Send an email",
     },
   ];
 
@@ -40,10 +43,11 @@ function Footer() {
 
         {/* Socials */}
         <div className="mt-10 flex gap-5">
-          {socials.map((item, index) => (
+          {socials.map((item) => (
             <a
-              key={index}
+              key={item.label}
               href={item.href}
+              aria-label={item.label}
               target={item.href.startsWith("mailto:") ? undefined : "_blank"}
               rel="noreferrer"
               className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-xl text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:bg-cyan-400 hover:text-slate-950"
@@ -65,6 +69,7 @@ function Footer() {
         {/* Back to Top */}
         <a
           href="#home"
+          aria-label="Back to top"
           className="mt-8 flex h-12 w-12 items-center justify-center rounded-full border border-cyan-400 bg-cyan-400/10 text-cyan-400 transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-400 hover:text-slate-950"
         >
           <FaArrowUp />
